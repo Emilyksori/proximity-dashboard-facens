@@ -1,5 +1,7 @@
 const connectionDot = document.getElementById('connectionDot');
 const mapMount = document.getElementById('mapMount');
+const freeSpotsValue = document.getElementById('freeSpotsValue');
+const occupiedSpotsValue = document.getElementById('occupiedSpotsValue');
 
 let mapRoot = null;
 let latestPayload = null;
@@ -13,7 +15,7 @@ function setConnectionState(state) {
 }
 
 async function loadMap() {
-  const response = await fetch('/img/parking-map-simple.svg');
+  const response = await fetch('/img/parking-photo-map.svg');
   const svgMarkup = await response.text();
 
   mapMount.innerHTML = svgMarkup;
@@ -24,16 +26,6 @@ async function loadMap() {
   }
 
   mapRoot.classList.add('parking-map');
-
-  const spotNumbers = mapRoot.querySelectorAll('.spot-number');
-  for (const number of spotNumbers) {
-    number.remove();
-  }
-
-  const cars = mapRoot.querySelector('.car');
-  if (cars) {
-    cars.remove();
-  }
 
   if (latestPayload) {
     renderPayload(latestPayload);
@@ -46,7 +38,6 @@ function applySpotState(index, occupied) {
   }
 
   const statusLight = mapRoot.getElementById(`spot-${index}-status`);
-  const sensor = mapRoot.querySelectorAll('.sensor')[index - 1];
 
   if (statusLight) {
     statusLight.setAttribute('fill', occupied ? '#22c55e' : '#ef4444');
@@ -54,14 +45,13 @@ function applySpotState(index, occupied) {
       ? 'drop-shadow(0 0 22px rgba(34, 197, 94, 0.78))'
       : 'drop-shadow(0 0 22px rgba(239, 68, 68, 0.78))';
   }
-
-  if (sensor) {
-    sensor.setAttribute('fill', occupied ? '#34d399' : '#fda4af');
-  }
 }
 
 function renderPayload(payload) {
   latestPayload = payload;
+
+  freeSpotsValue.textContent = String(payload?.freeSpots ?? 0);
+  occupiedSpotsValue.textContent = String(payload?.occupiedSpots ?? 0);
 
   if (!mapRoot || !payload?.spots) {
     return;
