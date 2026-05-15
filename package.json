@@ -1,0 +1,27 @@
+{
+  "name": "proximity-dashboard-facens",
+  "version": "1.0.0",
+  "description": "Node.js dashboard for monitoring an ESP32 proximity sensor over a serial port.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "ports": "node scripts/list-ports.js"
+  },
+  "keywords": [
+    "esp32",
+    "serialport",
+    "websocket",
+    "express",
+    "sensor"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@serialport/parser-readline": "^13.0.0",
+    "express": "^5.2.1",
+    "serialport": "^13.0.0",
+    "ws": "^8.20.1"
+  }
+}
