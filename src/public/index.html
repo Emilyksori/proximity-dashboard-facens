@@ -9,7 +9,31 @@
   <body>
     <main class="viewport">
       <div class="map-shell" id="mapShell" aria-label="Parking sensor status map">
-        <div class="status-chip" id="connectionDot" aria-hidden="true"></div>
+        <header class="topbar">
+          <div class="brand">
+            <img class="brand-logo" src="/img/logo-f-a.png" alt="Facens" />
+          </div>
+
+          <div class="hero-copy">
+            <h1>ESTACIONAMENTO FACENS</h1>
+            <p>Mapa de vagas em tempo real</p>
+          </div>
+
+          <div class="topbar-status">
+            <article class="metric-card metric-card-free">
+              <span class="metric-label">Vagas Livres</span>
+              <strong class="metric-value" id="freeSpotsValue">0</strong>
+            </article>
+
+            <article class="metric-card metric-card-occupied">
+              <span class="metric-label">Vagas Ocupadas</span>
+              <strong class="metric-value" id="occupiedSpotsValue">0</strong>
+            </article>
+
+            <div class="status-chip" id="connectionDot" aria-hidden="true"></div>
+          </div>
+        </header>
+
         <div id="mapMount"></div>
       </div>
     </main>
