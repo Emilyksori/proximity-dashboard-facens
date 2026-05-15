@@ -1,0 +1,39 @@
+<svg
+  width="1448"
+  height="1086"
+  viewBox="0 0 1448 1086"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <filter id="status-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="7" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <style>
+      .status-light {
+        stroke: rgba(18, 24, 28, 0.92);
+        stroke-width: 4;
+        filter: url(#status-glow);
+      }
+    </style>
+  </defs>
+
+  <image
+    href="/img/vagas_facens_indicadores.jpeg"
+    width="1448"
+    height="1086"
+    preserveAspectRatio="xMidYMid meet"
+  />
+
+  <!-- Spot order: top row left-to-right, then bottom row left-to-right -->
+  <circle id="spot-1-status" class="status-light" cx="957" cy="348" r="20" fill="#ef4444" />
+  <circle id="spot-2-status" class="status-light" cx="1029" cy="371" r="20" fill="#ef4444" />
+  <circle id="spot-3-status" class="status-light" cx="1100" cy="393" r="20" fill="#ef4444" />
+  <circle id="spot-4-status" class="status-light" cx="862" cy="470" r="20" fill="#ef4444" />
+  <circle id="spot-5-status" class="status-light" cx="929" cy="492" r="20" fill="#ef4444" />
+  <circle id="spot-6-status" class="status-light" cx="999" cy="517" r="20" fill="#ef4444" />
+</svg>
