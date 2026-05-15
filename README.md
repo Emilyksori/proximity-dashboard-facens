@@ -1,6 +1,17 @@
 # ESP32 Proximity Monitor
 
-Initial Node.js structure for monitoring a proximity sensor connected to an ESP32 over a serial port and streaming the sensor state to a browser in real time.
+A local web dashboard for monitoring a proximity sensor connected to an ESP32 through a USB serial connection.
+
+## Technologies
+- Node.js
+- Express
+- Javascript
+- HTML/CSS
+
+## Requirements
+Node.js installed
+An ESP32 connected to the computer via USB
+The ESP32 running code that sends serial messages at 115200 baud
 
 ## Dependencies
 
@@ -19,8 +30,6 @@ Baud rate:
 - `115200`
 
 ## Running on Windows
-
-### Command Prompt
 
 ```bat
 set SERIAL_PORT=COM7
